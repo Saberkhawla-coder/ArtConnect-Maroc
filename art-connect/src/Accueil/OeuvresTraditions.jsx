@@ -1,51 +1,26 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import { FaLocationDot } from "react-icons/fa6";
 import { IoArrowForwardOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom'
 import Evénements from './Evénements';
+import axios from 'axios'
 function OeuvresTraditions() {
-  const oeuvres = [
-    {
-      id: 1,
-      img: "/images/img5.jpg",
-      titre: "Tapis Berbère de l'Atlas",
-      desc: "Tapis traditionnel tissé à la main par les femmes berbères, utilisant des...",
-      lieu: "Ouarzazate, Haut Atlas",
-      auteur: "Fatima Amellal",
-    },
-    {
-      id: 2,
-      img: "/images/img3.jpg",
-      titre: "Poterie de Safi",
-      desc: "Poterie artisanale colorée réalisée selon les techniques traditionnelles...",
-      lieu: "Safi, Maroc",
-      auteur: "Ahmed Bouzid",
-    },
-    {
-      id: 3,
-      img: "/images/img2.jpg",
-      titre: "Caftan Marocain",
-      desc: "Tenue traditionnelle brodée à la main, symbole d’élégance marocaine...",
-      lieu: "Fès, Maroc",
-      auteur: "Laila El Idrissi",
-    },
-    {
-      id: 4,
-      img: "/images/img4.jpg",
-      titre: "Musique Gnaoua",
-      desc: "Tradition musicale ancestrale issue de la culture gnaoua...",
-      lieu: "Essaouira, Maroc",
-      auteur: "Hassan Oubella",
-    },
-    {
-      id: 5,
-      img: "/images/img1.jpg",
-      titre: "Bijoux Amazighs",
-      desc: "Bijoux en argent fabriqués à la main avec des motifs traditionnels...",
-      lieu: "Tiznit, Maroc",
-      auteur: "Samira Outaleb",
-    },
-  ];
+ 
+  const [oeuvres, setOeuvres] = useState([]);
+  
+  async function getOeuvres(){
+    try{
+       const response= await axios.get('http://localhost:3000/oeuvres')
+       setOeuvres(response.data)
+
+    }catch(e){
+      console.log(e)
+    }
+   
+  }
+  useEffect(()=>{
+    getOeuvres()
+  },[])
 
   return (
     <div>
@@ -79,7 +54,7 @@ function OeuvresTraditions() {
                 <p className="text-gray-600 text-sm mb-3">{oeuvre.desc}</p>
               </div>
               <div className="text-xs text-gray-500">
-                <p  className='flex gap-2  items-center'><FaLocationDot/> {oeuvre.lieu}</p>
+                <p  className='flex gap-2  items-center'><FaLocationDot className='text-amber-500'/> {oeuvre.lieu}</p>
                 <p >
                  Par<span className="font-medium text-gray-700"> {oeuvre.auteur}</span>
                 </p>
@@ -91,7 +66,7 @@ function OeuvresTraditions() {
         ))}
          <div >
         <Link to="/Explorer"   className="absolute -right-10 top-1/2 -translate-x-1/2 -translate-y-1/2
-        bg-gray-400/50 rounded-3xl shadow-2xl p-4 z-50 hover:bg-gray-500/60 "><IoArrowForwardOutline className='text-white text-2xl'/>
+        bg-gray-400/50 rounded-3xl shadow-2xl p-4 z-50 hover:bg-amber-500/60 "><IoArrowForwardOutline className='text-white text-2xl'/>
         </Link>        
       </div>
       </div>

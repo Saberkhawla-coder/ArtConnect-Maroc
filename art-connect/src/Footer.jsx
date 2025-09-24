@@ -8,7 +8,7 @@ function Footer() {
   return (
     <div className="bg-gray-200 py-10">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-        {/* Colonne 1 */}
+  
         <div>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">ArtConnect</h2>
           <p className="text-gray-500 text-sm leading-relaxed mb-6">
@@ -32,7 +32,6 @@ function Footer() {
           </div>
         </div>
 
-        {/* Colonne 2 */}
         <div>
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Navigation</h2>
           <ul className="flex flex-col gap-2 text-gray-600">
@@ -76,10 +75,10 @@ function Footer() {
           </ul>
         </div>
 
-        {/* Colonne 3 */}
+        
         <div>
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">Catégories</h2>
-          <ul className="flex flex-col gap-2 text-gray-600">
+          <h2 className="text-xl  font-semibold text-gray-800 mb-4">Catégories</h2>
+          <ul className="flex flex-col  gap-2 text-gray-600">
             <li>
               <Link
                 to="/Explorer"

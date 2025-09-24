@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Navbar() {
   return (
-    <nav className='flex justify-around p-5 bg-white text-dark allContentNav'>
+    <nav className='flex justify-around p-5 bg-white text-dark allContentNav shadow-lg shadow-gray-200 '>
       <div className='title'>
         <h1>ArtConnect Maroc</h1>
       </div>

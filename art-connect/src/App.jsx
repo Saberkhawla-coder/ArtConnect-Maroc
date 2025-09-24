@@ -6,6 +6,7 @@ import Home from './Accueil/Home.jsx'
 import Favoris from './Favoris/Favoris.jsx'
 import Apropos from './Apropos/Apropos.jsx'
 import Explorer from './Explorer/Explorer.jsx'
+import OeuvreDetail from './Explorer/OeuvreDetail.jsx'
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
         <Route path='/favoris' element={<Favoris />} />
         <Route path='/a propos' element={<Apropos />} />
         <Route path='/Explorer' element={<Explorer />} />
+        <Route path="/oeuvre/:id" element={<OeuvreDetail />} />
       </Routes>
     </>
   )
