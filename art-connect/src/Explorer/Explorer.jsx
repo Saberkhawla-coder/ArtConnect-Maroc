@@ -100,13 +100,10 @@ function Explorer() {
                   </p>
                 </div>
                 <div className="text-xs text-gray-500 border-t pt-2">
-                  <p className="flex gap-2 items-center">
-                    <FaLocationDot className="text-amber-600" /> {oeuvre.lieu}
-                  </p>
+                  
                   <div className="flex justify-between items-center">
-                    <p>
-                    Par
-                    <span className="font-medium text-gray-700"> {oeuvre.auteur}</span>
+                   <p className="flex gap-2 items-center">
+                    <FaLocationDot className="text-amber-600" /> {oeuvre.lieu.ville}, {oeuvre.lieu.region}
                   </p>
                   <Link  to={`/oeuvre/${oeuvre.id}`}   className="bg-amber-600 p-1 text-white rounded-lg cursor-pointer">En details</Link>
                   </div>

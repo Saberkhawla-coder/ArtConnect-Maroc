@@ -39,7 +39,7 @@ function OeuvreDetail() {
                 <strong className="text-amber-600">Auteur:</strong> {oeuvre.auteur}
               </p>
               <p className="text-gray-700">
-                <strong className="text-amber-600">Lieu:</strong> {oeuvre.lieu}
+                <strong className="text-amber-600">Lieu:</strong> {oeuvre.lieu.ville}, {oeuvre.lieu.region}
               </p>
             </div>
             <div className="flex justify-end">

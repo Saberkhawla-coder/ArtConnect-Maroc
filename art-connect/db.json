@@ -1,7 +1,7 @@
 {
   "evenements": [
     {
-      "id": 1,
+      "id": "1",
       "titre": "Festival International du Film",
       "description": "Projection de films internationaux et marocains, masterclass et rencontres avec des réalisateurs.",
       "ville": "Marrakech",
@@ -10,7 +10,7 @@
       "alt": "Festival Film Marrakech"
     },
     {
-      "id": 2,
+      "id": "2",
       "titre": "Festival Mawazine",
       "description": "Concerts de stars internationales et marocaines à Rabat.",
       "ville": "Rabat",
@@ -19,7 +19,7 @@
       "alt": "Mawazine Rabat"
     },
     {
-      "id": 3,
+      "id": "3",
       "titre": "Moussem de Tan-Tan",
       "description": "Célébration du patrimoine nomade sahraoui : fantasia, musique et artisanat.",
       "ville": "Tan-Tan",
@@ -28,7 +28,7 @@
       "alt": "Moussem Tan-Tan"
     },
     {
-      "id": 4,
+      "id": "4",
       "titre": "Musiques Sacrées du Monde",
       "description": "Un voyage spirituel à travers les musiques sacrées de différentes cultures.",
       "ville": "Fès",
@@ -39,81 +39,138 @@
   ],
   "oeuvres": [
     {
-      "id": 1,
+      "id": "1",
       "img": "/images/tapis.jpg",
       "titre": "Tapis Berbère de l'Atlas",
       "desc": "Tapis traditionnel tissé à la main par les femmes berbères, utilisant des fibres locales et des motifs ancestraux.",
-      "lieu": "Ouarzazate, Haut Atlas",
+      "lieu": {
+        "ville": "Ouarzazate",
+        "region": "Haut Atlas"
+      },
       "auteur": "Fatima Amellal",
-      "categorieId": 1
+      "categorieId": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "img": "/images/PoterieSafi.jpg",
       "titre": "Poterie de Safi",
       "desc": "Poterie artisanale colorée réalisée selon les techniques traditionnelles transmises depuis des générations.",
-      "lieu": "Safi, Maroc",
+      "lieu": {
+        "ville": "Safi",
+        "region": "Maroc"
+      },
       "auteur": "Ahmed Bouzid",
-      "categorieId": 1
+      "categorieId": "1"
     },
     {
-      "id": 3,
+      "id": "3",
       "img": "/images/CaftanMarocain.jpg",
       "titre": "Caftan Marocain",
       "desc": "Tenue traditionnelle brodée à la main, symbole d’élégance marocaine et de savoir-faire artisanal.",
-      "lieu": "Fès, Maroc",
+      "lieu": {
+        "ville": "Fès",
+        "region": "Maroc"
+      },
       "auteur": "Laila El Idrissi",
-      "categorieId": 3
+      "categorieId": "3"
     },
     {
-      "id": 4,
+      "id": "4",
       "img": "/images/MusiqueGnaoua.jpg",
       "titre": "Musique Gnaoua",
       "desc": "Tradition musicale ancestrale issue de la culture gnaoua, combinant percussions, chants et danses spirituelles.",
-      "lieu": "Essaouira, Maroc",
+      "lieu": {
+        "ville": "Essaouira",
+        "region": "Maroc"
+      },
       "auteur": "Hassan Oubella",
-      "categorieId": 4
+      "categorieId": "4"
     },
     {
-      "id": 5,
+      "id": "5",
       "img": "/images/BijouxAmazighs.jpg",
       "titre": "Bijoux Amazighs",
       "desc": "Bijoux en argent fabriqués à la main avec des motifs traditionnels symboliques de la culture amazighe.",
-      "lieu": "Tiznit, Maroc",
+      "lieu": {
+        "ville": "Tiznit",
+        "region": "Maroc"
+      },
       "auteur": "Samira Outaleb",
-      "categorieId": 1
+      "categorieId": "1"
     }
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "titre": "Artisanat",
       "description": "Objets artisanaux traditionnels marocains",
       "image": "/imgsCategories/cat1.png"
     },
     {
-      "id": 2,
+      "id": "2",
       "titre": "Gastronomie",
       "description": "Plats et recettes traditionnels du Maroc",
       "image": "/imgsCategories/cat2.png"
     },
     {
-      "id": 3,
+      "id": "3",
       "titre": "Habits & Mode",
       "description": "Tenues traditionnelles et modernes marocaines",
       "image": "/imgsCategories/cat3.png"
     },
     {
-      "id": 4,
+      "id": "4",
       "titre": "Musique & Danse",
       "description": "Patrimoine musical et danses traditionnelles",
       "image": "/imgsCategories/cat5.png"
     },
     {
-      "id": 5,
+      "id": "5",
       "titre": "Architecture",
       "description": "Monuments et maisons traditionnelles marocaines",
       "image": "/imgsCategories/cat4.png"
+    }
+  ],
+  "artisans": [
+    {
+      "id": "1",
+      "nom": "Mohamed El Fassi",
+      "metier": "Menuisier",
+      "ville": "Casablanca",
+      "experience": "10 ans",
+      "telephone": "+212600112233",
+      "email": "mohamed.el.fassi@example.com",
+      "image": "/images/menuisier1.jpg"
+    },
+    {
+      "id": "2",
+      "nom": "Fatima Zahra",
+      "metier": "Brodeuse",
+      "ville": "Fès",
+      "experience": "7 ans",
+      "telephone": "+212611223344",
+      "email": "fatima.brodeuse@example.com",
+      "image": "/images/brodeuse1.jpg"
+    },
+    {
+      "id": "3",
+      "nom": "Youssef Amrani",
+      "metier": "Forgeron",
+      "ville": "Marrakech",
+      "experience": "12 ans",
+      "telephone": "+212622334455",
+      "email": "youssef.forgeron@example.com",
+      "image": "/images/forgeron1.jpg"
+    },
+    {
+      "id": "4",
+      "nom": "Amina Benali",
+      "metier": "Potière",
+      "ville": "Safi",
+      "experience": "5 ans",
+      "telephone": "+212633445566",
+      "email": "amina.potiere@example.com",
+      "image": "/images/potiere1.jpg"
     }
   ]
 }

@@ -33,7 +33,10 @@ function OeuvresTraditions() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 relative">
-        {oeuvres.map((oeuvre) => (
+        {
+          
+        }
+         {oeuvres.slice(0,5).map((oeuvre) => (
           <div
             key={oeuvre.id}
             className="bg-red shadow-lg rounded-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 flex flex-col"
@@ -54,10 +57,8 @@ function OeuvresTraditions() {
                 <p className="text-gray-600 text-sm mb-3">{oeuvre.desc}</p>
               </div>
               <div className="text-xs text-gray-500">
-                <p  className='flex gap-2  items-center'><FaLocationDot className='text-amber-500'/> {oeuvre.lieu}</p>
-                <p >
-                 Par<span className="font-medium text-gray-700"> {oeuvre.auteur}</span>
-                </p>
+                <p  className='flex gap-2  items-center'><FaLocationDot className='text-amber-500'/> {oeuvre.lieu.ville}, {oeuvre.lieu.region}</p>
+                
               </div>
               
             </div>

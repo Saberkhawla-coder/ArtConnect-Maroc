@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Footer from '../Footer';
+import Artisans from './Artisans';
 
 function Evenements() {
   const [evenements, setEvenements] = useState([]);
@@ -69,8 +69,8 @@ function Evenements() {
           </button>
         </div>
       </div>
-
-      <Footer />
+      <Artisans/>
+      
     </div>
   );
 }
