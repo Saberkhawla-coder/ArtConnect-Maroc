@@ -12,12 +12,13 @@ function Navbar() {
          <Link to="/Explorer" className='hover:text-amber-500'>Explorer</Link>
         <Link to="/form" className='hover:text-amber-500'>Publier</Link>
         <Link to="/favoris" className='hover:text-amber-500 '> Favoris</Link> 
-        <Link to="/a propos" className='hover:text-amber-500'>A propos</Link>
+        <Link to="/apropos" className='hover:text-amber-500'>A propos</Link>
          
 
       </div>
-      <div  className='flex gap-5'>
-        <Link to="/favoris" className='hover:text-amber-500 '>Admin</Link> 
+      <div >
+        <Link to="/admin" className='hover:text-amber-500'>Admin</Link>
+
       </div>
       
     </nav>
