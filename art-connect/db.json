@@ -43,12 +43,14 @@
       "img": "/images/tapis.jpg",
       "titre": "Tapis Berbère de l'Atlas",
       "desc": "Tapis traditionnel tissé à la main par les femmes berbères, utilisant des fibres locales et des motifs ancestraux.",
+      "ville": "Ouarzazate",
+      "region": "Haut Atlas",
+      "auteur": "Fatima Amellal",
+      "categorieId": "1",
       "lieu": {
         "ville": "Ouarzazate",
         "region": "Haut Atlas"
-      },
-      "auteur": "Fatima Amellal",
-      "categorieId": "1"
+      }
     },
     {
       "id": "2",
@@ -72,7 +74,9 @@
         "region": "Maroc"
       },
       "auteur": "Laila El Idrissi",
-      "categorieId": "3"
+      "categorieId": "3",
+      "ville": "Fès",
+      "region": "Maroc"
     },
     {
       "id": "4",
