@@ -157,28 +157,50 @@ function Form() {
                 <span className="text-gray-700 font-medium border-1 px-4 py-2 rounded-2xl">Choisir un fichier</span>
                 <span className="text-sm text-gray-500 mt-1">Formats: JPG, PNG, GIF (max 5MB)</span>
 
-                <input
-                    id="file-upload"
-                    type="file"
-                    accept="image/*"
-                    className="hidden"
-                    onChange={(e) => {
-                    const file = e.target.files[0];
-                    if (file) {
-                        const previewUrl = URL.createObjectURL(file);
-                        setForm({ ...form, img: previewUrl }); 
-                    }
-                    }}
-                />
+        <input
+  id="file-upload"
+  type="file"
+  accept="image/*"
+  className="hidden"
+  onChange={async (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const data = new FormData();
+      data.append("file", file);
+      data.append("upload_preset", "ArtConnectMaroc"); 
+
+      try {
+        const res = await fetch(
+          `https://api.cloudinary.com/v1_1/daed4ovqa/image/upload`,
+          {
+            method: "POST",
+            body: data,
+          }
+        );
+
+        const uploadResponse = await res.json();
+        console.log("Cloudinary response:", uploadResponse);
+
+        // ✅ Store Cloudinary secure_url directly in form
+        setForm({ ...form, img: uploadResponse.secure_url });
+      } catch (error) {
+        console.error("Upload failed:", error);
+      }
+    }
+  }}
+/>
+
+
                 </label>
             </div>
 
-            {form.img && (
-                <div className="mt-4 text-center">
-                <p className="text-sm text-gray-600 mb-2">Aperçu :</p>
-                <img src={form.img} alt="preview" className="mx-auto max-h-48 rounded-lg" />
-                </div>
-            )}
+          {form.img ? (
+            <div className="mt-4 text-center">
+              <p className="text-sm text-gray-600 mb-2">Aperçu :</p>
+              <img src={form.img} alt="preview" className="mx-auto max-h-48 rounded-lg" />
+            </div>
+          ) : null}
+
             </div>
 
 
