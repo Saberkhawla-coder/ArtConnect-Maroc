@@ -1,25 +1,14 @@
-import React,{useState,useEffect} from 'react'
+// OeuvresTraditions.jsx
+import React, { useContext } from 'react';
 import { FaHeart, FaLocationDot } from "react-icons/fa6";
 import { IoArrowForwardOutline } from "react-icons/io5";
-import { Link } from 'react-router-dom'
-import Evénements from './Evénements';
-import axios from 'axios'
+import { Link } from 'react-router-dom';
+import Evenements from './Evénements.jsx';
+import { AppContext } from '../context/AppContext';
+import axios from 'axios';
 
 function OeuvresTraditions() {
-  const [oeuvres, setOeuvres] = useState([]);
-  
-  async function getOeuvres(){
-    try{
-       const response= await axios.get('http://localhost:3000/oeuvres')
-       setOeuvres(response.data)
-    }catch(e){
-      console.log(e)
-    }
-  }
-
-  useEffect(()=>{
-    getOeuvres()
-  },[])
+  const { oeuvres } = useContext(AppContext); 
 
   const ajouterAuxFavoris = async (oeuvre) => {
     try {
@@ -35,7 +24,7 @@ function OeuvresTraditions() {
 
   return (
     <div>
-      <div className="px-8 py-12 bg-gray-50 mt-8 ">
+      <div className="px-8 py-12 bg-gray-50 mt-8">
         <div className="text-center mb-10">
           <h1 className="text-3xl font-bold text-gray-800">Derniers Ajouts</h1>
           <p className="text-gray-600 mt-2">
@@ -70,7 +59,7 @@ function OeuvresTraditions() {
                   </p>
                 </div>
                 
-                {/* BOUTON AJOUTER AUX FAVORIS - AJOUTÉ ICI */}
+                {/* bouton favoris */}
                 <button 
                   onClick={() => ajouterAuxFavoris(oeuvre)}
                   className="mt-3 bg-amber-500 text-white px-3 py-2 rounded-lg hover:bg-amber-600 transition flex items-center justify-center gap-2 text-sm"
@@ -92,9 +81,9 @@ function OeuvresTraditions() {
         </div>
       </div>
       
-      <Evénements/>
+      <Evenements />
     </div>
-  )
+  );
 }
 
-export default OeuvresTraditions
+export default OeuvresTraditions;

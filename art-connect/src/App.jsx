@@ -12,28 +12,36 @@ import OeuvreDetail from './Explorer/OeuvreDetail.jsx';
 import Oeuvres from './Admin/Oeuvres/Oeuvres.jsx';
 import Categories from './Admin/Categories/Categories.jsx';
 import Artisans from './Admin/Artisans/Artisans.jsx';
-import Evenements from './Admin/Evenements/Evenements.jsx'; 
+import Evenements from './Admin/Evenements/Evenements.jsx';
+
+// ✅ Importer ton context
+import { AppProvider } from './context/AppContext';
+
 function App() {
   return (
-    <Routes>
-      {/* Public pages with Navbar */}
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/form" element={<Form />} />
-        <Route path="/favoris" element={<Favoris />} />
-        <Route path="/Apropos" element={<Apropos />} />
-        <Route path="/Explorer" element={<Explorer />} />
-        <Route path="/oeuvre/:id" element={<OeuvreDetail />} />
-      </Route>
+    // On englobe toutes les routes avec AppProvider
+    <AppProvider>
+      <Routes>
+        {/* Public pages with Navbar */}
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/form" element={<Form />} />
+          <Route path="/favoris" element={<Favoris />} />
+          <Route path="/Apropos" element={<Apropos />} />
+          <Route path="/Explorer" element={<Explorer />} />
+          <Route path="/oeuvre/:id" element={<OeuvreDetail />} />
+        </Route>
 
-      <Route element={<AdminLayout />}>
-        <Route path="/admin" element={<Oeuvres />} />
-        <Route path="/admin/oeuvres" element={<Oeuvres />} />
-        <Route path="/admin/categories" element={<Categories />} />
-        <Route path="/admin/artisans" element={<Artisans />} />
-        <Route path="/admin/evenements" element={<Evenements />} />
-      </Route>
-    </Routes>
+        {/* Admin pages */}
+        <Route element={<AdminLayout />}>
+          <Route path="/admin" element={<Oeuvres />} />
+          <Route path="/admin/oeuvres" element={<Oeuvres />} />
+          <Route path="/admin/categories" element={<Categories />} />
+          <Route path="/admin/artisans" element={<Artisans />} />
+          <Route path="/admin/evenements" element={<Evenements />} />
+        </Route>
+      </Routes>
+    </AppProvider>
   );
 }
 

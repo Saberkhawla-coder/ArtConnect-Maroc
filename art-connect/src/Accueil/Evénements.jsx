@@ -1,26 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+// Evenements.jsx
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Artisans from './Artisans';
-import { FaHeart } from "react-icons/fa6"; // IMPORT AJOUTÉ
+import { AppContext } from '../context/AppContext';
 
 function Evenements() {
-  const [evenements, setEvenements] = useState([]);
-
-  async function GetEvenements() {
-    try {
-      const response = await axios.get('http://localhost:3000/evenements');
-      setEvenements(response.data);
-    } catch (error) {
-      console.error("Erreur lors de la récupération des événements :", error);
-    }
-  }
-
-  useEffect(() => {
-    GetEvenements();
-  }, []);
-
-
+  const { evenements } = useContext(AppContext); // ✅ depuis context
 
   return (
     <div>
@@ -47,7 +32,6 @@ function Evenements() {
                   <span>{event.ville}</span>
                   <span>{event.date}</span>
                 </div>
-                
               </div>
             </div>
           ))}
@@ -73,7 +57,7 @@ function Evenements() {
           </button>
         </div>
       </div>
-      <Artisans/>
+      <Artisans />
     </div>
   );
 }

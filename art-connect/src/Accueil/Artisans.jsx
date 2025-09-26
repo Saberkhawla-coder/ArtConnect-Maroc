@@ -1,24 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 import Footer from "../Footer";
-import axios from "axios";
-import { FaHeart } from "react-icons/fa6";
 
 function Artisans() {
-  const [artisans, setArtisans] = useState([]);
-
-  async function getArtisans() {
-    try {
-      const res = await axios.get("http://localhost:3000/artisans");
-      setArtisans(res.data);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  useEffect(() => {
-    getArtisans();
-  }, []);
-
+  const { artisans } = useContext(AppContext); // ✅ pas besoin de axios ici
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -47,15 +32,12 @@ function Artisans() {
                   />
                 </div>
               </div>
-
               <div className="text-center px-4 py-6">
                 <h2 className="text-lg font-semibold text-gray-900">
                   {art.nom}
                 </h2>
                 <p className="text-amber-600 font-medium">{art.metier}</p>
                 <p className="text-sm text-gray-500">{art.ville}</p>
-                
-               
               </div>
             </div>
           ))}
