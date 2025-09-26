@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Artisans from './Artisans';
+import { FaHeart } from "react-icons/fa6"; // IMPORT AJOUTÉ
 
 function Evenements() {
   const [evenements, setEvenements] = useState([]);
@@ -18,6 +19,19 @@ function Evenements() {
   useEffect(() => {
     GetEvenements();
   }, []);
+
+  // FONCTION AJOUTÉE POUR LES FAVORIS
+  const ajouterEvenementFavori = async (event) => {
+    try {
+      await axios.post('http://localhost:3000/favoris', {
+        ...event,
+        type: 'evenement'
+      });
+      alert('✅ Événement ajouté aux favoris !');
+    } catch (error) {
+      console.error('Erreur:', error);
+    }
+  };
 
   return (
     <div>
@@ -44,6 +58,14 @@ function Evenements() {
                   <span>{event.ville}</span>
                   <span>{event.date}</span>
                 </div>
+                
+                {/* BOUTON AJOUTÉ ICI */}
+                <button 
+                  onClick={() => ajouterEvenementFavori(event)}
+                  className="mt-4 bg-amber-500 text-white px-4 py-2 rounded-lg hover:bg-amber-600 transition flex items-center justify-center gap-2 w-full text-sm"
+                >
+                  <FaHeart /> Ajouter aux favoris
+                </button>
               </div>
             </div>
           ))}
@@ -70,7 +92,6 @@ function Evenements() {
         </div>
       </div>
       <Artisans/>
-      
     </div>
   );
 }

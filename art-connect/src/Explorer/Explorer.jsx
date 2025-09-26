@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { FaLocationDot } from "react-icons/fa6"; 
+import { FaLocationDot, FaHeart } from "react-icons/fa6"; 
 import { Link } from "react-router-dom";
 import Footer from "../Footer";
+
 function Explorer() {
   const [oeuvres, setOeuvres] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -35,6 +36,19 @@ function Explorer() {
     getCategorie();
   }, []);
 
+  // Fonction pour ajouter aux favoris
+  const ajouterAuxFavoris = async (oeuvre) => {
+    try {
+      await axios.post('http://localhost:3000/favoris', {
+        ...oeuvre,
+        type: 'oeuvre'
+      });
+      alert('✅ Ajouté aux favoris !');
+    } catch (error) {
+      console.error('Erreur:', error);
+    }
+  };
+
   // Filtrage des oeuvres
   const filteredOeuvres = oeuvres.filter((oeuvre) => {
     const matchSearch = oeuvre.titre.toLowerCase().includes(search.toLowerCase());
@@ -45,7 +59,7 @@ function Explorer() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="flex flex-col justify-center items-center bg-gradient-to-r  from-gray-100 to-gray-300 h-48 shadow-md text-center px-4">
+      <div className="flex flex-col justify-center items-center bg-gradient-to-r from-gray-100 to-gray-300 h-48 shadow-md text-center px-4">
         <h2 className="text-3xl font-extrabold text-gray-900 mb-2">
           Explorer le Patrimoine
         </h2>
@@ -99,15 +113,32 @@ function Explorer() {
                     {oeuvre.desc}
                   </p>
                 </div>
+                
                 <div className="text-xs text-gray-500 border-t pt-2">
-                  
-                  <div className="flex justify-between items-center">
-                   <p className="flex gap-2 items-center">
-                    <FaLocationDot className="text-amber-600" /> {oeuvre.lieu.ville}, {oeuvre.lieu.region}
-                  </p>
-                  <Link  to={`/oeuvre/${oeuvre.id}`}   className="bg-amber-600 p-1 text-white rounded-lg cursor-pointer">En details</Link>
+                  <div className="flex justify-between items-center mb-2">
+                    <p className="flex gap-2 items-center">
+                      <FaLocationDot className="text-amber-600" /> 
+                      {oeuvre.lieu.ville}, {oeuvre.lieu.region}
+                    </p>
                   </div>
                   
+                  {/* NOUVEAU : Boutons en ligne */}
+                  <div className="flex justify-between items-center gap-2">
+                    <Link 
+                      to={`/oeuvre/${oeuvre.id}`} 
+                      className="bg-amber-600 px-3 py-2 text-white rounded-lg cursor-pointer hover:bg-amber-700 transition text-sm flex-1 text-center"
+                    >
+                      En détails
+                    </Link>
+                    
+                    {/* BOUTON FAVORIS AJOUTÉ */}
+                    <button 
+                      onClick={() => ajouterAuxFavoris(oeuvre)}
+                      className="bg-gray-800 px-3 py-2 text-white rounded-lg hover:bg-black transition flex items-center justify-center gap-1 text-sm flex-1"
+                    >
+                      <FaHeart className="text-sm" /> Favoris
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
