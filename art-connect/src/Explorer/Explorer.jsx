@@ -9,7 +9,7 @@ function Explorer() {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  // Fonction pour ajouter aux favoris
+  // Ajouter aux favoris
   const ajouterAuxFavoris = async (oeuvre) => {
     try {
       await fetch("http://localhost:3000/favoris", {
@@ -23,7 +23,13 @@ function Explorer() {
     }
   };
 
-  // Filtrage
+  // Vider les filtres
+  const clearFilters = () => {
+    setSearch("");
+    setSelectedCategory("");
+  };
+
+  // Filtrer les œuvres
   const filteredOeuvres = oeuvres.filter((oeuvre) => {
     const matchSearch = oeuvre.titre
       .toLowerCase()
@@ -69,9 +75,52 @@ function Explorer() {
             </option>
           ))}
         </select>
+
+        {(search || selectedCategory) && (
+          <button
+            onClick={clearFilters}
+            className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition whitespace-nowrap"
+          >
+            Effacer
+          </button>
+        )}
       </div>
 
-      {/* Liste oeuvres */}
+      {/* Résultats */}
+      <div className="max-w-3xl mx-auto px-6 mt-6">
+        {(search || selectedCategory) && (
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6">
+            <p className="text-amber-800">
+              {filteredOeuvres.length > 0 ? (
+                <>
+                  <span className="font-semibold">{filteredOeuvres.length}</span>{" "}
+                  œuvre(s) trouvée(s)
+                  {search && ` pour "${search}"`}
+                  {selectedCategory &&
+                    ` dans ${
+                      categories.find(
+                        (cat) => cat.id === parseInt(selectedCategory)
+                      )?.titre
+                    }`}
+                </>
+              ) : (
+                <>
+                  Aucune œuvre trouvée
+                  {search && ` pour "${search}"`}
+                  {selectedCategory &&
+                    ` dans ${
+                      categories.find(
+                        (cat) => cat.id === parseInt(selectedCategory)
+                      )?.titre
+                    }`}
+                </>
+              )}
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* Grille œuvres */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 my-12 px-6 lg:px-16">
         {filteredOeuvres.length > 0 ? (
           filteredOeuvres.map((oeuvre) => (
@@ -122,12 +171,25 @@ function Explorer() {
               </div>
             </div>
           ))
+        ) : oeuvres.length > 0 ? (
+          <div className="col-span-full text-center py-12">
+            <p className="text-gray-500 text-lg mb-4">
+              Aucune œuvre ne correspond à vos critères de recherche
+            </p>
+            <button
+              onClick={clearFilters}
+              className="bg-amber-500 text-white px-6 py-2 rounded-lg hover:bg-amber-600 transition"
+            >
+              Voir toutes les œuvres
+            </button>
+          </div>
         ) : (
-          <p className="text-gray-500 col-span-full text-center text-lg">
-            Aucune œuvre trouvée
-          </p>
+          <div className="col-span-full text-center py-12">
+            <p className="text-gray-500 text-lg">Chargement des œuvres...</p>
+          </div>
         )}
       </div>
+
       <Footer />
     </div>
   );
