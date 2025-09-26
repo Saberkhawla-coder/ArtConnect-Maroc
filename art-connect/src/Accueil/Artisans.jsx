@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../Footer";
 import axios from "axios";
+import { FaHeart } from "react-icons/fa6";
 
 function Artisans() {
   const [artisans, setArtisans] = useState([]);
@@ -18,6 +19,7 @@ function Artisans() {
     getArtisans();
   }, []);
 
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="py-12 px-6 max-w-7xl mx-auto">
@@ -34,7 +36,7 @@ function Artisans() {
           {artisans.map((art) => (
             <div
               key={art.id}
-              className="rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden"
+              className="bg-white rounded-xl shadow-md hover:shadow-lg transition duration-300 overflow-hidden"
             >
               <div className="flex justify-center mt-6">
                 <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-amber-400 shadow-sm">
@@ -52,6 +54,8 @@ function Artisans() {
                 </h2>
                 <p className="text-amber-600 font-medium">{art.metier}</p>
                 <p className="text-sm text-gray-500">{art.ville}</p>
+                
+               
               </div>
             </div>
           ))}

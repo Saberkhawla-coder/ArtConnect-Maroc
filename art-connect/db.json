@@ -1,4 +1,32 @@
 {
+  "favoris": [
+    {
+      "id": "4",
+      "img": "/images/MusiqueGnaoua.jpg",
+      "titre": "Musique Gnaoua",
+      "desc": "Tradition musicale ancestrale issue de la culture gnaoua, combinant percussions, chants et danses spirituelles.",
+      "lieu": {
+        "ville": "Essaouira",
+        "region": "Maroc"
+      },
+      "auteur": "Hassan Oubella",
+      "categorieId": "4",
+      "type": "oeuvre"
+    },
+    {
+      "id": "eb7d",
+      "titre": "sksklkla",
+      "categorie": "kskskskk",
+      "lieu": {
+        "region": "msmsmsmms",
+        "ville": "sssjsjsj"
+      },
+      "auteur": "skkskssk",
+      "desc": "sjsjjssjjsjsj",
+      "img": "https://res.cloudinary.com/daed4ovqa/image/upload/v1758885340/p7mk21kivcyaky85um0d.jpg",
+      "type": "oeuvre"
+    }
+  ],
   "evenements": [
     {
       "id": "1",

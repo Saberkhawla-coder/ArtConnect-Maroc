@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Artisans from './Artisans';
+import { FaHeart } from "react-icons/fa6"; // IMPORT AJOUTÉ
 
 function Evenements() {
   const [evenements, setEvenements] = useState([]);
@@ -18,6 +19,8 @@ function Evenements() {
   useEffect(() => {
     GetEvenements();
   }, []);
+
+
 
   return (
     <div>
@@ -44,6 +47,7 @@ function Evenements() {
                   <span>{event.ville}</span>
                   <span>{event.date}</span>
                 </div>
+                
               </div>
             </div>
           ))}
@@ -70,7 +74,6 @@ function Evenements() {
         </div>
       </div>
       <Artisans/>
-      
     </div>
   );
 }
