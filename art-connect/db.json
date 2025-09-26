@@ -14,19 +14,6 @@
       "type": "oeuvre"
     },
     {
-      "id": "eb7d",
-      "titre": "sksklkla",
-      "categorie": "kskskskk",
-      "lieu": {
-        "region": "msmsmsmms",
-        "ville": "sssjsjsj"
-      },
-      "auteur": "skkskssk",
-      "desc": "sjsjjssjjsjsj",
-      "img": "https://res.cloudinary.com/daed4ovqa/image/upload/v1758885340/p7mk21kivcyaky85um0d.jpg",
-      "type": "oeuvre"
-    },
-    {
       "id": "1",
       "img": "/images/tapis.jpg",
       "titre": "Tapis Berbère de l'Atlas",
@@ -183,7 +170,7 @@
       "metier": "Menuisier",
       "ville": "Casablanca",
       "experience": "10 ans",
-      "telephone": "+212600112233",
+      "telephone": "+212600112234",
       "email": "mohamed.el.fassi@example.com",
       "image": "/images/menuisier1.jpg"
     },

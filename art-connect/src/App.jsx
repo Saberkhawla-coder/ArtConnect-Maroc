@@ -11,7 +11,8 @@ import Explorer from './Explorer/Explorer.jsx';
 import OeuvreDetail from './Explorer/OeuvreDetail.jsx';
 import Oeuvres from './Admin/Oeuvres/Oeuvres.jsx';
 import Categories from './Admin/Categories/Categories.jsx';
-
+import Artisans from './Admin/Artisans/Artisans.jsx';
+import Evenements from './Admin/Evenements/Evenements.jsx'; 
 function App() {
   return (
     <Routes>
@@ -29,6 +30,8 @@ function App() {
         <Route path="/admin" element={<Oeuvres />} />
         <Route path="/admin/oeuvres" element={<Oeuvres />} />
         <Route path="/admin/categories" element={<Categories />} />
+        <Route path="/admin/artisans" element={<Artisans />} />
+        <Route path="/admin/evenements" element={<Evenements />} />
       </Route>
     </Routes>
   );
