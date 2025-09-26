@@ -66,7 +66,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/a-propos"
+                to="/Apropos"
                 className="hover:text-amber-500 transition-colors"
               >
                 À propos

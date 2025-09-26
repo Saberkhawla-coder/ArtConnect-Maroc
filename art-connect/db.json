@@ -1,4 +1,45 @@
 {
+  "favoris": [
+    {
+      "id": "1",
+      "img": "/images/tapis.jpg",
+      "titre": "Tapis Berbère de l'Atlas",
+      "desc": "Tapis traditionnel tissé à la main par les femmes berbères, utilisant des fibres locales et des motifs ancestraux.",
+      "lieu": {
+        "ville": "Ouarzazate",
+        "region": "Haut Atlas"
+      },
+      "auteur": "Fatima Amellal",
+      "categorieId": "1",
+      "type": "oeuvre"
+    },
+    {
+      "id": "4",
+      "img": "/images/MusiqueGnaoua.jpg",
+      "titre": "Musique Gnaoua",
+      "desc": "Tradition musicale ancestrale issue de la culture gnaoua, combinant percussions, chants et danses spirituelles.",
+      "lieu": {
+        "ville": "Essaouira",
+        "region": "Maroc"
+      },
+      "auteur": "Hassan Oubella",
+      "categorieId": "4",
+      "type": "oeuvre"
+    },
+    {
+      "id": "3",
+      "img": "/images/CaftanMarocain.jpg",
+      "titre": "Caftan Marocain",
+      "desc": "Tenue traditionnelle brodée à la main, symbole d’élégance marocaine et de savoir-faire artisanal.",
+      "lieu": {
+        "ville": "Fès",
+        "region": "Maroc"
+      },
+      "auteur": "Laila El Idrissi",
+      "categorieId": "3",
+      "type": "oeuvre"
+    }
+  ],
   "evenements": [
     {
       "id": "1",

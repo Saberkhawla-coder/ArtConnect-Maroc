@@ -12,7 +12,7 @@ function Navbar() {
          <Link to="/Explorer" className='hover:text-amber-500'>Explorer</Link>
         <Link to="/form" className='hover:text-amber-500'>Publier</Link>
         <Link to="/favoris" className='hover:text-amber-500 '> Favoris</Link> 
-        <Link to="/a propos" className='hover:text-amber-500'>A propos</Link>
+        <Link to="/Apropos" className='hover:text-amber-500'>A propos</Link>
          
 
       </div>
