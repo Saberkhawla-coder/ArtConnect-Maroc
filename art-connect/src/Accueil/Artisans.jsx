@@ -19,17 +19,6 @@ function Artisans() {
     getArtisans();
   }, []);
 
-  const ajouterArtisanFavori = async (artisan) => {
-    try {
-      await axios.post('http://localhost:3000/favoris', {
-        ...artisan,
-        type: 'artisan'
-      });
-      alert('✅ Artisan ajouté aux favoris !');
-    } catch (error) {
-      console.error('Erreur:', error);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -66,13 +55,7 @@ function Artisans() {
                 <p className="text-amber-600 font-medium">{art.metier}</p>
                 <p className="text-sm text-gray-500">{art.ville}</p>
                 
-                {/* BOUTON AJOUTER AUX FAVORIS - AJOUTÉ ICI */}
-                <button 
-                  onClick={() => ajouterArtisanFavori(art)}
-                  className="mt-4 bg-amber-500 text-white px-4 py-2 rounded-lg hover:bg-amber-600 transition flex items-center justify-center gap-2 w-full text-sm"
-                >
-                  <FaHeart /> Ajouter aux favoris
-                </button>
+               
               </div>
             </div>
           ))}

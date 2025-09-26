@@ -20,18 +20,7 @@ function Evenements() {
     GetEvenements();
   }, []);
 
-  // FONCTION AJOUTÉE POUR LES FAVORIS
-  const ajouterEvenementFavori = async (event) => {
-    try {
-      await axios.post('http://localhost:3000/favoris', {
-        ...event,
-        type: 'evenement'
-      });
-      alert('✅ Événement ajouté aux favoris !');
-    } catch (error) {
-      console.error('Erreur:', error);
-    }
-  };
+
 
   return (
     <div>
@@ -59,13 +48,6 @@ function Evenements() {
                   <span>{event.date}</span>
                 </div>
                 
-                {/* BOUTON AJOUTÉ ICI */}
-                <button 
-                  onClick={() => ajouterEvenementFavori(event)}
-                  className="mt-4 bg-amber-500 text-white px-4 py-2 rounded-lg hover:bg-amber-600 transition flex items-center justify-center gap-2 w-full text-sm"
-                >
-                  <FaHeart /> Ajouter aux favoris
-                </button>
               </div>
             </div>
           ))}

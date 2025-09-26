@@ -14,16 +14,16 @@
       "type": "oeuvre"
     },
     {
-      "id": "3",
-      "img": "/images/CaftanMarocain.jpg",
-      "titre": "Caftan Marocain",
-      "desc": "Tenue traditionnelle brodée à la main, symbole d’élégance marocaine et de savoir-faire artisanal.",
+      "id": "eb7d",
+      "titre": "sksklkla",
+      "categorie": "kskskskk",
       "lieu": {
-        "ville": "Fès",
-        "region": "Maroc"
+        "region": "msmsmsmms",
+        "ville": "sssjsjsj"
       },
-      "auteur": "Laila El Idrissi",
-      "categorieId": "3",
+      "auteur": "skkskssk",
+      "desc": "sjsjjssjjsjsj",
+      "img": "https://res.cloudinary.com/daed4ovqa/image/upload/v1758885340/p7mk21kivcyaky85um0d.jpg",
       "type": "oeuvre"
     },
     {
@@ -84,12 +84,14 @@
       "img": "/images/tapis.jpg",
       "titre": "Tapis Berbère de l'Atlas",
       "desc": "Tapis traditionnel tissé à la main par les femmes berbères, utilisant des fibres locales et des motifs ancestraux.",
+      "ville": "Ouarzazate",
+      "region": "Haut Atlas",
+      "auteur": "Fatima Amellal",
+      "categorieId": "1",
       "lieu": {
         "ville": "Ouarzazate",
         "region": "Haut Atlas"
-      },
-      "auteur": "Fatima Amellal",
-      "categorieId": "1"
+      }
     },
     {
       "id": "2",
@@ -113,7 +115,9 @@
         "region": "Maroc"
       },
       "auteur": "Laila El Idrissi",
-      "categorieId": "3"
+      "categorieId": "3",
+      "ville": "Fès",
+      "region": "Maroc"
     },
     {
       "id": "4",

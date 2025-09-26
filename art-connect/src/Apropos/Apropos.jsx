@@ -6,7 +6,7 @@ import Footer from "../Footer";
 
 function Apropos() {
   return (
-    <div className="min-h-screen bg-white pt-12"> {/* Réduit l'espace top */}
+    <div className=" pt-12"> {/* Réduit l'espace top */}
       {/* Container principal */}
       <div className="max-w-6xl mx-auto px-6 py-8">
         

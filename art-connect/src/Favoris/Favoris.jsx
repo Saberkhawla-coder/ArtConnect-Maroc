@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { FaHeart, FaTrash, FaLocationDot } from "react-icons/fa6";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { FaTrash, FaLocationDot, FaHeart } from "react-icons/fa6";
 import Footer from "../Footer";
 
 function Favoris() {
@@ -40,7 +40,7 @@ function Favoris() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="min-h-screen bg-white shadow-md flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-black mx-auto"></div>
           <p className="mt-4 text-gray-600">Chargement de vos favoris...</p>
@@ -50,7 +50,7 @@ function Favoris() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="">
       <div className="max-w-7xl mx-auto px-6 py-12">
         
         {/* En-tête aligné à gauche */}
@@ -95,7 +95,7 @@ function Favoris() {
             {favoris.map((favori) => (
               <div key={favori.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300">
                 
-                {/* IMAGE GRANDE AJOUTÉE */}
+      
                 <div className="h-64 overflow-hidden">
                   <img 
                     src={favori.image || favori.img} 
